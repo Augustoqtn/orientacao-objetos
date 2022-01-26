@@ -10,3 +10,5 @@ echo $primeraConta->recuperaNomeTitular() .PHP_EOL;
 echo $primeraConta->recuperaCpfTitular() .PHP_EOL;
 echo $primeraConta->recuperaSaldo() .PHP_EOL;
 
+
+echo Conta::recuperaNumeroDeContas();

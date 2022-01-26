@@ -5,6 +5,7 @@ class Conta
     private $cpfTitular;
     private $nomeTitular;
     private $saldo = 0;
+    private static $numeroDeContas = 0;
 
 
 
@@ -14,6 +15,7 @@ class Conta
         $this->validaNomeTitular($nomeTitular);
         $this->nomeTitular = $nomeTitular;
         $this->saldo = 0;
+        conta::$numeroDeContas++;
 
     }
 
@@ -71,5 +73,10 @@ class Conta
             exit();
         }
     }
+    public static function recuperaNumeroDeContas():int
+    {
+        return conta::$numeroDeContas;
+    }
+    
 }
  
