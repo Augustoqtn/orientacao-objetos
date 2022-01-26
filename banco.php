@@ -2,13 +2,11 @@
 
 require_once 'src/conta.php';
 
-$primeraConta = new conta();
+$primeraConta = new conta('123.123.123-00','Augusto');
 $primeraConta->deposita(500);
 $primeraConta-> saca(300);
-$primeraConta->defineCpfTitular('123.123.123-00');
-$primeraConta->defineNomeTitular('Augusto');
 
+echo $primeraConta->recuperaNomeTitular() .PHP_EOL;
+echo $primeraConta->recuperaCpfTitular() .PHP_EOL;
+echo $primeraConta->recuperaSaldo() .PHP_EOL;
 
-echo $primeraConta->recuperaSaldo();
-echo $primeraConta->recuperaCpfTitular();
-echo $primeraConta->recuperaNomeTitular();
