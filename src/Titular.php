@@ -7,6 +7,7 @@ class Titular
     public function __construct(string $cpf, string $nome)
     {
         $this->cpf = $cpf;
+        $this->validaNomeTitular($nome);
         $this->nome = $nome;
     }
 

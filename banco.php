@@ -12,6 +12,8 @@ $primeraConta-> saca(300);
 echo $primeraConta->recuperaNomeTitular() .PHP_EOL;
 echo $primeraConta->recuperaCpfTitular() .PHP_EOL;
 echo $primeraConta->recuperaSaldo() .PHP_EOL;
+var_dump($primeraConta);
+
 
 
 echo Conta::recuperaNumeroDeContas();
