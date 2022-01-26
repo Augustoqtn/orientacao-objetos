@@ -3,17 +3,14 @@
 class Conta
 {
     private $titular;
-    private $saldo = 0;
+    private $saldo;
     private static $numeroDeContas = 0;
 
-
-
-    public function __construct(titular $titular)
-    {   
-        $this->titular = $titular;
+    public function __construct(Titular $titular)
+    {
+        $this->titular = $titular. 
         $this->saldo = 0;
-        conta::$numeroDeContas++;
-
+        self::$numeroDeContas++;
     }
 
     public function saca(float $valorASacar)
@@ -36,7 +33,7 @@ class Conta
         $this->saldo += $valorADopositar;
     }
     
-    public function transfere(float $valorATransferir, conta $contaDestino): void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void
     {
         if ($valorATransferir > $this->saldo) {
             echo "saldo indisponivel";
@@ -52,9 +49,19 @@ class Conta
         return $this->saldo;
     }
 
+    public function recuperaNomeTitular(): string
+    {
+        return $this->titular->recuperaNome();
+    }
+    
+    public function recuperaCpfTitular(): string
+    {
+        return $this->titular->recuperaCpf();
+    }
+
     public static function recuperaNumeroDeContas():int
     {
-        return conta::$numeroDeContas;
+        return Conta::$numeroDeContas;
     }
     
 }

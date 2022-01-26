@@ -33,7 +33,7 @@ class Conta
         $this->saldo += $valorADopositar;
     }
     
-    public function transfere(float $valorATransferir, conta $contaDestino): void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void
     {
         if ($valorATransferir > $this->saldo) {
             echo "saldo indisponivel";
@@ -61,7 +61,7 @@ class Conta
 
     public static function recuperaNumeroDeContas():int
     {
-        return conta::$numeroDeContas;
+        return Conta::$numeroDeContas;
     }
     
 }
