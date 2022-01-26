@@ -1,8 +1,11 @@
 <?php
 
-require_once 'src/conta.php';
+require_once 'src/Conta.php';
+require_once 'src/Titular.php';
 
-$primeraConta = new conta('123.123.123-00','Augusto');
+
+
+$primeraConta = new conta(new Titular('123.123.123-00','Augusto'));
 $primeraConta->deposita(500);
 $primeraConta-> saca(300);
 
